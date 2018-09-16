@@ -70,7 +70,7 @@ fastlane/readme.md
 /.idea/libraries
 /.idea/modules.xml
 /.idea/workspace.xml
-/git/app-handcode/kotlinc.xml
+git/app-handcode/kotlinc.xml
 .DS_Store
 /build
 /captures
