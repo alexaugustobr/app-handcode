@@ -70,7 +70,9 @@ fastlane/readme.md
 /.idea/libraries
 /.idea/modules.xml
 /.idea/workspace.xml
+/.idea/app-handcode/kotlinc.xml
 .DS_Store
 /build
 /captures
 .externalNativeBuild
+
