@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">AppHandcode</string>
+    <string name="action_buscar">Buscar</string>
+    <string name="action_atualizar">Atualizar</string>
+    <string name="action_config">Configuraçao</string>
 </resources>
