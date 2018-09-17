@@ -24,9 +24,18 @@ class MainActivity : DebugActivity() {
             login(inputUsuario.text.toString(),inputSenha.text.toString())
         }
 
+        buttonCadastrarGrupo.setOnClickListener{
+            cadastrarGrupo()
+        }
+
     }
 
-    fun login(usuario : String, senha : String) {
+    private fun cadastrarGrupo() {
+        val intent = Intent(context, CadastroGrupoActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun login(usuario : String, senha : String) {
         try {
 
             val alunoLogado = LoginService.logar(usuario, senha)

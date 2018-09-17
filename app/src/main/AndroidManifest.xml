@@ -22,7 +22,8 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-        <activity android:name=".activity.PainelAlunoActivity"></activity>
+        <activity android:name=".activity.PainelAlunoActivity" />
+        <activity android:name=".activity.CadastroGrupoActivity"></activity>
     </application>
 
 </manifest>
