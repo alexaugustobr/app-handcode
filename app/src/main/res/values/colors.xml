@@ -6,4 +6,5 @@
     <color name="colorPrimaryHandcode">#111f70</color>
     <color name="colorPrimaryDarkHandcode">#000946</color>
     <color name="colorAccentHandcode">#4046ff</color>
+    <color name="colorWhiteHandcode">#71ffffff</color>
 </resources>
