@@ -1,6 +1,7 @@
 package com.handcode.app.apphandcode.activity
 
 import android.content.Context
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -34,6 +35,10 @@ class PainelAlunoActivity : DebugActivity() {
         } else if (id == R.id.actionConfig) {
             Toast.makeText(context, "Botão de configuracoes",
                     Toast.LENGTH_LONG).show()
+        } else if (id == R.id.actionSair) {
+            val returnIntent = Intent()
+            setResult(1, returnIntent)
+            finish()
         }
         return super.onOptionsItemSelected(item)
     }

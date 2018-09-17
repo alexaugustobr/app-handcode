@@ -23,7 +23,8 @@
             android:resource="@array/preloaded_fonts" />
 
         <activity android:name=".activity.PainelAlunoActivity" />
-        <activity android:name=".activity.CadastroGrupoActivity"></activity>
+        <activity android:name=".activity.CadastroGrupoActivity" />
+        <activity android:name=".activity.CadastroIntegranteActivity"></activity>
     </application>
 
 </manifest>
