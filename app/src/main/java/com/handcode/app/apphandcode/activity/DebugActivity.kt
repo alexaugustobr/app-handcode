@@ -1,4 +1,4 @@
-package com.handcode.app.apphandcode
+package com.handcode.app.apphandcode.activity
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
