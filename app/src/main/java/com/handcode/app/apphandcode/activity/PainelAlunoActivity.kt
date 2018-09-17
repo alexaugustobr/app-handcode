@@ -8,6 +8,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import com.handcode.app.apphandcode.R
+import kotlinx.android.synthetic.main.toolbar.*
 
 class PainelAlunoActivity : DebugActivity() {
 
@@ -16,6 +17,11 @@ class PainelAlunoActivity : DebugActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_painel_aluno)
+
+
+        supportActionBar?.title = "Painel do Aluno"
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -39,7 +45,10 @@ class PainelAlunoActivity : DebugActivity() {
             val returnIntent = Intent()
             setResult(1, returnIntent)
             finish()
+        } else if (id == android.R.id.home) {
+            finish()
         }
+
         return super.onOptionsItemSelected(item)
     }
 }

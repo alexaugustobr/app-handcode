@@ -14,8 +14,8 @@
         android:adjustViewBounds="false"
         android:background="@color/colorPrimaryHandcode"
         android:cropToPadding="false"
-        android:paddingBottom="100px"
-        android:paddingTop="100px"
+        android:paddingBottom="40dp"
+        android:paddingTop="40dp"
         app:srcCompat="@drawable/logo"
         tools:background="#111f70" />
 
@@ -23,55 +23,55 @@
         android:id="@+id/textUsuario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="100px"
-        android:layout_marginRight="100px"
-        android:layout_marginTop="100px"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="40dp"
         android:fontFamily="@font/raleway_extrabold"
-        android:padding="30px"
+        android:padding="10dp"
         android:text="Usuário" />
 
     <EditText
         android:id="@+id/inputUsuario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="100px"
-        android:layout_marginRight="100px"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
         android:ems="10"
         android:fontFamily="@font/raleway_medium"
         android:inputType="textPersonName"
-        android:padding="30px" />
+        android:padding="10dp" />
 
     <TextView
         android:id="@+id/textSenha"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="100px"
-        android:layout_marginRight="100px"
-        android:layout_marginTop="50px"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/raleway_extrabold"
-        android:padding="30px"
+        android:padding="10dp"
         android:text="Senha" />
 
     <EditText
         android:id="@+id/inputSenha"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="100px"
-        android:layout_marginRight="100px"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
         android:ems="10"
         android:fontFamily="@font/raleway_medium"
         android:inputType="textPassword"
-        android:padding="30px" />
+        android:padding="10dp" />
 
     <Button
         android:id="@+id/buttonLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200px"
-        android:layout_marginRight="200px"
-        android:layout_marginTop="20px"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginTop="10dp"
         android:fontFamily="@font/raleway_extrabold"
-        android:padding="30px"
+        android:padding="10dp"
         android:text="Entrar" />
 
     <TextView
@@ -79,7 +79,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/raleway_medium"
-        android:padding="20px"
+        android:padding="10dp"
         android:text="Esqueceu a senha?"
         android:textAlignment="center" />
 
@@ -87,9 +87,9 @@
         android:id="@+id/buttonCadastrarGrupo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="100px"
+        android:layout_margin="40dp"
         android:fontFamily="@font/raleway_extrabold"
-        android:padding="30px"
+        android:padding="10dp"
         android:text="Cadastrar Grupo" />
 
 </LinearLayout>

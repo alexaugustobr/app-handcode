@@ -5,28 +5,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="40dp"
+    android:fontFamily="@font/raleway_medium"
     tools:context=".activity.CadastroGrupoActivity">
+
 
     <TextView
         android:id="@+id/textTema"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="100px"
-        android:layout_marginRight="100px"
-        android:layout_marginTop="200px"
+        android:layout_marginTop="40dp"
         android:fontFamily="@font/raleway_extrabold"
-        android:padding="30px"
+        android:padding="10dp"
         android:text="Tema" />
 
     <EditText
         android:id="@+id/inputTema"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="100px"
-        android:layout_marginRight="100px"
         android:ems="10"
         android:fontFamily="@font/raleway_medium"
         android:inputType="textPersonName"
+        android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="135dp" />
@@ -35,22 +35,19 @@
         android:id="@+id/textCurso"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="100px"
-        android:layout_marginRight="100px"
-        android:layout_marginTop="50px"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/raleway_extrabold"
-        android:padding="30px"
+        android:padding="10dp"
         android:text="Curso" />
 
     <EditText
         android:id="@+id/inputCurso"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="100px"
-        android:layout_marginRight="100px"
         android:ems="10"
         android:fontFamily="@font/raleway_medium"
         android:inputType="textPersonName"
+        android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="210dp" />
@@ -59,22 +56,19 @@
         android:id="@+id/textNomeGrupo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="100px"
-        android:layout_marginRight="100px"
-        android:layout_marginTop="50px"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/raleway_extrabold"
-        android:padding="30px"
+        android:padding="10dp"
         android:text="Nome do Grupo" />
 
     <EditText
         android:id="@+id/inputNomeGrupo2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="100px"
-        android:layout_marginRight="100px"
         android:ems="10"
         android:fontFamily="@font/raleway_medium"
         android:inputType="textPersonName"
+        android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="67dp" />
@@ -83,9 +77,7 @@
         android:id="@+id/btnAddIntegrantes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="100px"
-        android:layout_marginRight="100px"
-        android:layout_marginTop="100px"
+        android:layout_marginTop="40dp"
         android:fontFamily="@font/raleway_extrabold"
         android:text="Adicionar integrantes"
         app:layout_constraintBottom_toBottomOf="parent"

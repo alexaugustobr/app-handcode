@@ -5,55 +5,97 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.CadastroIntegranteActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="40dp">
 
-    <EditText
-        android:id="@+id/editText"
+
+    <TextView
+        android:id="@+id/textNomeAluno"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:ems="10"
-        android:hint="Nome"
-        android:inputType="textPersonName" />
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/raleway_extrabold"
+        android:padding="10dp"
+        android:text="Nome" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/inputNomeAluno"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
         android:ems="10"
-        android:hint="RA"
-        android:inputType="textPersonName" />
+        android:fontFamily="@font/raleway_medium"
+        android:inputType="textPersonName"
+        android:padding="10dp" />
+
+    <TextView
+        android:id="@+id/textAlunoRA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/raleway_extrabold"
+        android:padding="10dp"
+        android:text="RA" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/inputAlunoRA"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
         android:ems="10"
-        android:hint="Email"
-        android:inputType="textPersonName" />
+        android:fontFamily="@font/raleway_medium"
+        android:inputType="textPersonName"
+        android:padding="10dp" />
+
+    <TextView
+        android:id="@+id/textAlunoEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/raleway_extrabold"
+        android:padding="10dp"
+        android:text="E-mail" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/inputAlunoEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
         android:ems="10"
-        android:hint="Turma"
-        android:inputType="textPersonName" />
+        android:fontFamily="@font/raleway_medium"
+        android:inputType="textPersonName"
+        android:padding="10dp" />
+
+    <TextView
+        android:id="@+id/textAlunoTurma"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/raleway_extrabold"
+        android:padding="10dp"
+        android:text="Turma" />
+
+    <EditText
+        android:id="@+id/inputAlunoTurma"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:fontFamily="@font/raleway_medium"
+        android:inputType="textPersonName"
+        android:padding="10dp" />
 
     <Button
         android:id="@+id/buttonAddOutro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/raleway_extrabold"
+        android:padding="10dp"
         android:text="Adicionar outro" />
 
     <Button
         android:id="@+id/buttonFinalizar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/raleway_extrabold"
+        android:padding="10dp"
         android:text="Finalizar" />
 </LinearLayout>
