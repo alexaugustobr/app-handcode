@@ -80,7 +80,7 @@
         tools:layout_editor_absoluteY="67dp" />
 
     <Button
-        android:id="@+id/buttonAddIntegrantes"
+        android:id="@+id/btnAddIntegrantes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="100px"

@@ -33,8 +33,8 @@ class PainelAlunoActivity : DebugActivity() {
             Toast.makeText(context, "Botão de atualizar",
                     Toast.LENGTH_LONG).show()
         } else if (id == R.id.actionConfig) {
-            Toast.makeText(context, "Botão de configuracoes",
-                    Toast.LENGTH_LONG).show()
+            val intent = Intent(context, ConfiguracoesActivity::class.java)
+            startActivity(intent)
         } else if (id == R.id.actionSair) {
             val returnIntent = Intent()
             setResult(1, returnIntent)
