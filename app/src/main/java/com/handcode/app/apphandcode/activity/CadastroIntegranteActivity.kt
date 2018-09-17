@@ -15,7 +15,7 @@ class CadastroIntegranteActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cadastro_integrante)
-        btnAddIntegrantes.setOnClickListener{cadastrarIntegrantes()}
+        buttonAddOutro.setOnClickListener{cadastrarIntegrantes()}
         buttonFinalizar.setOnClickListener{finalizar()}
     }
 
