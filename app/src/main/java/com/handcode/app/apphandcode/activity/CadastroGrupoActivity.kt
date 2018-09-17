@@ -13,7 +13,7 @@ class CadastroGrupoActivity : DebugActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cadastro_grupo)
-        buttonAddIntegrantes.setOnClickListener{
+        btnAddIntegrantes.setOnClickListener{
             cadastrarIntegrantes()
         }
     }

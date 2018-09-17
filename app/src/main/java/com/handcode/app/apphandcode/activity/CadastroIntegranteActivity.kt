@@ -15,14 +15,13 @@ class CadastroIntegranteActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cadastro_integrante)
-        buttonAddIntegrantes.setOnClickListener{cadastrarIntegrantes()}
+        buttonAddOutro.setOnClickListener{cadastrarIntegrantes()}
         buttonFinalizar.setOnClickListener{finalizar()}
     }
 
     private fun finalizar() {
-        val returnIntent = Intent()
-        setResult(1, returnIntent)
-        finish()
+        val intent = Intent(context, MainActivity::class.java)
+        startActivity(intent)
     }
 
     private fun cadastrarIntegrantes() {
