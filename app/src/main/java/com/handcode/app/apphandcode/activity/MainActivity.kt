@@ -45,10 +45,10 @@ class MainActivity : DebugActivity() {
 
         } catch (e : AlunoNaoEncontradoException) {
             Log.getStackTraceString(e)
-            Toast.makeText(context, e.localizedMessage, Toast.LENGTH_LONG).show()
+            Toast.makeText(context, "Usuário ou senha incorretos" , Toast.LENGTH_LONG).show()
         } catch (e : SenhaIncorretaException) {
             Log.getStackTraceString(e)
-            Toast.makeText(context, e.localizedMessage, Toast.LENGTH_LONG).show()
+            Toast.makeText(context, "Usuário ou senha incorretos" , Toast.LENGTH_LONG).show()
         } catch (e : Exception) {
             Log.getStackTraceString(e)
             Toast.makeText(context, "Ocorreu um erro interno.", Toast.LENGTH_LONG).show()
