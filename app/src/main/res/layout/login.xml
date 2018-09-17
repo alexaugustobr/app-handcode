@@ -87,7 +87,9 @@
         android:id="@+id/buttonCadastrarGrupo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="10dp"
         android:fontFamily="@font/raleway_extrabold"
         android:padding="10dp"
         android:text="Cadastrar Grupo" />
