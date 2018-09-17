@@ -87,7 +87,7 @@
         android:layout_marginRight="100px"
         android:layout_marginTop="100px"
         android:fontFamily="@font/raleway_extrabold"
-        android:text="Adicionar intregrantes"
+        android:text="Adicionar integrantes"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
