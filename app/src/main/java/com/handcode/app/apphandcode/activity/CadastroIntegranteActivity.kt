@@ -20,9 +20,8 @@ class CadastroIntegranteActivity : AppCompatActivity() {
     }
 
     private fun finalizar() {
-        val returnIntent = Intent()
-        setResult(1, returnIntent)
-        finish()
+        val intent = Intent(context, MainActivity::class.java)
+        startActivity(intent)
     }
 
     private fun cadastrarIntegrantes() {
