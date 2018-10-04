@@ -4,13 +4,18 @@ import android.content.Context
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.design.widget.NavigationView
+import android.support.v4.widget.DrawerLayout
+import android.support.v7.app.ActionBarDrawerToggle
+import android.support.v7.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import com.handcode.app.apphandcode.R
+import kotlinx.android.synthetic.main.activity_cadastro_grupo.*
 import kotlinx.android.synthetic.main.toolbar.*
 
-class PainelAlunoActivity : DebugActivity() {
+class PainelAlunoActivity : DebugActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     private val context: Context get() = this
 
@@ -18,10 +23,34 @@ class PainelAlunoActivity : DebugActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_painel_aluno)
 
-
+        var toolbar = findViewById<Toolbar>(R.id.toolbar)
+        setSupportActionBar(toolbar)
         supportActionBar?.title = "Painel do Aluno"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
+        configuraMenuLateral()
+    }
+
+    private fun configuraMenuLateral(){
+        var toolbar = findViewById<Toolbar>(R.id.toolbar)
+        var menuLateral = findViewById<DrawerLayout>(R.id.layoutMenuLateral)
+
+        var toogle = ActionBarDrawerToggle (
+                this,
+                menuLateral,
+                toolbar,
+                R.string.navigation_drawer_open,
+                R.string.navigation_drawer_close)
+
+        menuLateral.addDrawerListener(toogle)
+        toogle.syncState()
+
+        val navigationView = findViewById<NavigationView>(R.id.menu_lateral)
+        navigationView.setNavigationItemSelectedListener(this)
+    }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
