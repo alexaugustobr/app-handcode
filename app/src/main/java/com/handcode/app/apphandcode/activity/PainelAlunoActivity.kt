@@ -5,6 +5,7 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.NavigationView
+import android.support.v4.view.GravityCompat
 import android.support.v4.widget.DrawerLayout
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.widget.Toolbar
@@ -50,7 +51,27 @@ class PainelAlunoActivity : DebugActivity(), NavigationView.OnNavigationItemSele
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        when (item.itemId) {
+            R.id.navPainelAluno -> {
+                Toast.makeText(this, "Clicou", Toast.LENGTH_SHORT).show()
+            }
+            R.id.navEntregas -> {
+                Toast.makeText(this, "Clicou", Toast.LENGTH_SHORT).show()
+            }
+            R.id.navEntregasPendentes -> {
+                Toast.makeText(this, "Clicou", Toast.LENGTH_SHORT).show()
+            }
+            R.id.navEnviarDocs -> {
+                Toast.makeText(this, "Clicou", Toast.LENGTH_SHORT).show()
+            }
+            R.id.navNotas -> {
+                Toast.makeText(this, "Clicou", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        val drawer = findViewById<DrawerLayout>(R.id.layoutMenuLateral)
+        drawer.closeDrawer(GravityCompat.START)
+        return true
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

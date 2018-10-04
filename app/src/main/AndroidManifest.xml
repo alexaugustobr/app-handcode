@@ -23,6 +23,10 @@
             android:resource="@array/preloaded_fonts" />
 
         <activity android:name=".activity.PainelAlunoActivity"/>
+        <activity android:name=".activity.EntregasActivity"/>
+        <activity android:name=".activity.EntregasPendentesActivity"/>
+        <activity android:name=".activity.EnviarDocumentosActivity"/>
+        <activity android:name=".activity.NotasActivity"/>
         <activity android:name=".activity.CadastroGrupoActivity"/>
         <activity android:name=".activity.CadastroIntegranteActivity"/>
         <activity android:name=".activity.ConfiguracoesActivity"></activity>
