@@ -53,19 +53,29 @@ class PainelAlunoActivity : DebugActivity(), NavigationView.OnNavigationItemSele
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.navPainelAluno -> {
-                Toast.makeText(this, "Clicou", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Painel do Aluno", Toast.LENGTH_SHORT).show()
             }
             R.id.navEntregas -> {
-                Toast.makeText(this, "Clicou", Toast.LENGTH_SHORT).show()
+                val intent = Intent(context, EntregasActivity::class.java)
+                startActivity(intent)
+
+                Toast.makeText(this, "Entregas Realizadas", Toast.LENGTH_SHORT).show()
             }
             R.id.navEntregasPendentes -> {
-                Toast.makeText(this, "Clicou", Toast.LENGTH_SHORT).show()
+                val intent = Intent(context, EntregasPendentesActivity::class.java)
+                startActivity(intent)
+
+                Toast.makeText(this, "Entregas Pendentes", Toast.LENGTH_SHORT).show()
             }
             R.id.navEnviarDocs -> {
-                Toast.makeText(this, "Clicou", Toast.LENGTH_SHORT).show()
+                val intent = Intent(context, EnviarDocumentosActivity::class.java)
+                startActivity(intent)
+                Toast.makeText(this, "Enviar Documentos", Toast.LENGTH_SHORT).show()
             }
             R.id.navNotas -> {
-                Toast.makeText(this, "Clicou", Toast.LENGTH_SHORT).show()
+                val intent = Intent(context, NotasActivity::class.java)
+                startActivity(intent)
+                Toast.makeText(this, "Notas", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -94,7 +104,7 @@ class PainelAlunoActivity : DebugActivity(), NavigationView.OnNavigationItemSele
         } else if (id == R.id.actionSair) {
             val returnIntent = Intent()
             setResult(1, returnIntent)
-            finish()
+            super.onDestroy()
         } else if (id == android.R.id.home) {
             finish()
         }

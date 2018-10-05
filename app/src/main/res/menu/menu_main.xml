@@ -5,17 +5,18 @@
     <item
         android:id="@+id/actionBuscar"
         android:icon="@drawable/ic_buscar_white"
-        android:title="Buscar"
-        app:showAsAction="always" />
+        android:title="@string/actionBuscar"
+        app:showAsAction="always"
+        app:actionViewClass="android.support.v7.widget.SearchView"/>
     <item
         android:id="@+id/actionAtualizar"
         android:icon="@drawable/ic_atualizar_white"
-        android:title="Atualizar" />
+        android:title="@string/actionAtualizar"/>
     <item
         android:id="@+id/actionConfig"
         android:icon="@drawable/ic_configuracoes_white"
-        android:title="Configurações" />
+        android:title="@string/actionConfig" />
     <item
         android:id="@+id/actionSair"
-        android:title="Sair" />
+        android:title="@string/actionSair" />
 </menu>

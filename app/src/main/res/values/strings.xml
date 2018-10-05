@@ -2,4 +2,9 @@
     <string name="app_name">AppHandcode</string>
     <string name="navigation_drawer_open">Abrir</string>
     <string name="navigation_drawer_close">Fechar</string>
+    <string name="actionBuscar">Buscar</string>
+    <string name="actionAtualizar">Atualizar</string>
+    <string name="actionConfig">Configurações</string>
+    <string name="actionSair">Sair</string>
+
 </resources>

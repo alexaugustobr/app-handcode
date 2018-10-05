@@ -53,7 +53,30 @@ class EnviarDocumentosActivity : DebugActivity(), NavigationView.OnNavigationIte
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.navPainelAluno -> {
-                Toast.makeText(this, "Clicou", Toast.LENGTH_SHORT).show()
+                val intent = Intent(context, PainelAlunoActivity::class.java)
+                startActivity(intent)
+
+                Toast.makeText(this, "Painel do Aluno", Toast.LENGTH_SHORT).show()
+            }
+            R.id.navEntregas -> {
+                val intent = Intent(context, EntregasActivity::class.java)
+                startActivity(intent)
+
+                Toast.makeText(this, "Entregas Realizadas", Toast.LENGTH_SHORT).show()
+            }
+            R.id.navEntregasPendentes -> {
+                val intent = Intent(context, EntregasPendentesActivity::class.java)
+                startActivity(intent)
+
+                Toast.makeText(this, "Entregas Pendentes", Toast.LENGTH_SHORT).show()
+            }
+            R.id.navEnviarDocs -> {
+                Toast.makeText(this, "Enviar Documentos", Toast.LENGTH_SHORT).show()
+            }
+            R.id.navNotas -> {
+                val intent = Intent(context, NotasActivity::class.java)
+                startActivity(intent)
+                Toast.makeText(this, "Notas", Toast.LENGTH_SHORT).show()
             }
         }
 
