@@ -58,7 +58,6 @@ class PainelAlunoActivity : DebugActivity(), NavigationView.OnNavigationItemSele
             R.id.navEntregas -> {
                 val intent = Intent(context, EntregasActivity::class.java)
                 startActivity(intent)
-
                 Toast.makeText(this, "Entregas Realizadas", Toast.LENGTH_SHORT).show()
             }
             R.id.navEntregasPendentes -> {

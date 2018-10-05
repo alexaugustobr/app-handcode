@@ -6,16 +6,16 @@
             android:title="Painel do Aluno" android:checked="true"/>
         <item android:id="@+id/navEntregas"
             android:icon="@drawable/file"
-            android:title="Entregas" android:checked="true"/>
+            android:title="Entregas"/>
         <item android:id="@+id/navEntregasPendentes"
             android:icon="@drawable/document_error"
-            android:title="Entregas Pendentes" android:checked="true"/>
+            android:title="Entregas Pendentes"/>
         <item android:id="@+id/navEnviarDocs"
             android:icon="@drawable/send_mail"
-            android:title="Enviar Documentos" android:checked="true"/>
+            android:title="Enviar Documentos"/>
         <item android:id="@+id/navNotas"
             android:icon="@drawable/exam"
-            android:title="Notas" android:checked="true"/>
+            android:title="Notas" />
     </group>
 
 </menu>
