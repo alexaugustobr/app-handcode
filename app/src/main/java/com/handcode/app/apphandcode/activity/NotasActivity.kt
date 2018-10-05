@@ -73,10 +73,18 @@ class NotasActivity : DebugActivity(), NavigationView.OnNavigationItemSelectedLi
             R.id.navEnviarDocs -> {
                 val intent = Intent(context, EnviarDocumentosActivity::class.java)
                 startActivity(intent)
+
                 Toast.makeText(this, "Enviar Documentos", Toast.LENGTH_SHORT).show()
             }
             R.id.navNotas -> {
+
                 Toast.makeText(this, "Notas", Toast.LENGTH_SHORT).show()
+            }
+            R.id.navSair -> {
+                val intent = Intent(context, MainActivity::class.java)
+                startActivity(intent)
+                finishAndRemoveTask()
+
             }
         }
 

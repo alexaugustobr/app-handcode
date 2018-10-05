@@ -16,6 +16,9 @@
         <item android:id="@+id/navNotas"
             android:icon="@drawable/exam"
             android:title="Notas" />
+        <item android:id="@+id/navSair"
+            android:icon="@drawable/logout"
+            android:title="Sair" />
     </group>
 
 </menu>

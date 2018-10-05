@@ -71,12 +71,20 @@ class EnviarDocumentosActivity : DebugActivity(), NavigationView.OnNavigationIte
                 Toast.makeText(this, "Entregas Pendentes", Toast.LENGTH_SHORT).show()
             }
             R.id.navEnviarDocs -> {
+
                 Toast.makeText(this, "Enviar Documentos", Toast.LENGTH_SHORT).show()
             }
             R.id.navNotas -> {
                 val intent = Intent(context, NotasActivity::class.java)
                 startActivity(intent)
+
                 Toast.makeText(this, "Notas", Toast.LENGTH_SHORT).show()
+            }
+            R.id.navSair -> {
+                val intent = Intent(context, MainActivity::class.java)
+                startActivity(intent)
+                finishAndRemoveTask()
+
             }
         }
 

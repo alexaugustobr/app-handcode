@@ -53,11 +53,13 @@ class PainelAlunoActivity : DebugActivity(), NavigationView.OnNavigationItemSele
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.navPainelAluno -> {
+
                 Toast.makeText(this, "Painel do Aluno", Toast.LENGTH_SHORT).show()
             }
             R.id.navEntregas -> {
                 val intent = Intent(context, EntregasActivity::class.java)
                 startActivity(intent)
+
                 Toast.makeText(this, "Entregas Realizadas", Toast.LENGTH_SHORT).show()
             }
             R.id.navEntregasPendentes -> {
@@ -69,12 +71,20 @@ class PainelAlunoActivity : DebugActivity(), NavigationView.OnNavigationItemSele
             R.id.navEnviarDocs -> {
                 val intent = Intent(context, EnviarDocumentosActivity::class.java)
                 startActivity(intent)
+
                 Toast.makeText(this, "Enviar Documentos", Toast.LENGTH_SHORT).show()
             }
             R.id.navNotas -> {
                 val intent = Intent(context, NotasActivity::class.java)
                 startActivity(intent)
+
                 Toast.makeText(this, "Notas", Toast.LENGTH_SHORT).show()
+            }
+            R.id.navSair -> {
+                val intent = Intent(context, MainActivity::class.java)
+                startActivity(intent)
+                finishAndRemoveTask()
+
             }
         }
 
@@ -101,9 +111,9 @@ class PainelAlunoActivity : DebugActivity(), NavigationView.OnNavigationItemSele
             val intent = Intent(context, ConfiguracoesActivity::class.java)
             startActivity(intent)
         } else if (id == R.id.actionSair) {
-            val returnIntent = Intent()
-            setResult(1, returnIntent)
-            super.onDestroy()
+            val intent = Intent(context, MainActivity::class.java)
+            startActivity(intent)
+            finishAndRemoveTask()
         } else if (id == android.R.id.home) {
             finish()
         }
