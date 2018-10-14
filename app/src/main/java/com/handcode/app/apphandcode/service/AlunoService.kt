@@ -1,6 +1,8 @@
 package com.handcode.app.apphandcode.model
 
-object AlunoService {
+import com.handcode.app.apphandcode.service.BaseService
+
+object AlunoService : BaseService() {
 
     private val alunos : MutableMap<String, Aluno> = HashMap()
 

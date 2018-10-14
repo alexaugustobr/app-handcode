@@ -1,12 +1,21 @@
 package com.handcode.app.apphandcode.model
 
-object LoginService {
+import com.handcode.app.apphandcode.service.BaseService
+import com.handcode.app.apphandcode.vo.TokenContainer
+import fernandosousa.com.br.lmsapp.HttpHelper
+
+object LoginService : BaseService() {
 
     @Throws(AlunoNaoEncontradoException::class, SenhaIncorretaException::class)
-    fun logar(usuario : String, senha : String) : Aluno {
-        val aluno = AlunoService.buscar(usuario)
-        if (!aluno.senha.equals(senha)) throw SenhaIncorretaException()
-        return aluno
+    fun logar(email : String, senha : String) : TokenContainer {
+        val json = HttpHelper.post(loginURL(), Aluno(email,senha).toJson())
+        val tokenContainer : TokenContainer = parserJson(json)
+        return tokenContainer
     }
 
+    fun informacoesUsuarioAutenticado(tokenContainer : TokenContainer) : Aluno {
+        val json = HttpHelper.getAutenticado(usuarioAutenticadoDetalhesURL(),tokenContainer)
+        val aluno : Aluno = parserJson(json)
+        return aluno
+    }
 }

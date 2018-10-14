@@ -32,7 +32,7 @@
             android:layout_marginTop="40dp"
             android:fontFamily="@font/raleway_extrabold"
             android:padding="10dp"
-            android:text="Usuário" />
+            android:text="Email" />
 
         <EditText
             android:id="@+id/inputUsuario"

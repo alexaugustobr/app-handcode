@@ -44,32 +44,46 @@ class MainActivity : DebugActivity() {
     }
 
     private fun login(usuario : String, senha : String) {
-        try {
+        Thread {
+            try {
 
-            val alunoLogado = LoginService.logar(usuario, senha)
+                val tokenContainer = LoginService.logar(usuario, senha)
 
-            val params = Bundle()
-            params.putString("usuario", usuario)
+                val alunoAutenticado = LoginService.informacoesUsuarioAutenticado(tokenContainer)
 
-            val intent = Intent(context, PainelAlunoActivity::class.java)
-            intent.putExtras(params)
+                val params = Bundle()
+                params.putString("usuario", usuario)
 
-            startActivity(intent)
+                val intent = Intent(context, PainelAlunoActivity::class.java)
+                intent.putExtras(params)
 
-            val nome = alunoLogado.nome
+                startActivity(intent)
 
-            Toast.makeText(context, "Bem vindo $nome.", Toast.LENGTH_LONG).show()
+                val nome = alunoAutenticado.nome
+                runOnUiThread {
+                    Toast.makeText(context, "Bem vindo $nome.", Toast.LENGTH_LONG).show()
+                }
+            } catch (e : AlunoNaoEncontradoException) {
+                Log.getStackTraceString(e)
+                e.printStackTrace()
+                runOnUiThread {
+                    Toast.makeText(context, "Usuário ou senha incorretos", Toast.LENGTH_LONG).show()
+                }
+            } catch (e : SenhaIncorretaException) {
+                Log.getStackTraceString(e)
+                e.printStackTrace()
+                runOnUiThread {
+                    Toast.makeText(context, "Usuário ou senha incorretos", Toast.LENGTH_LONG).show()
+                }
+            } catch (e : Exception) {
+                Log.getStackTraceString(e)
+                e.printStackTrace()
+                runOnUiThread {
+                    Toast.makeText(context, "Ocorreu um erro interno.", Toast.LENGTH_LONG).show()
+                }
 
-        } catch (e : AlunoNaoEncontradoException) {
-            Log.getStackTraceString(e)
-            Toast.makeText(context, "Usuário ou senha incorretos" , Toast.LENGTH_LONG).show()
-        } catch (e : SenhaIncorretaException) {
-            Log.getStackTraceString(e)
-            Toast.makeText(context, "Usuário ou senha incorretos" , Toast.LENGTH_LONG).show()
-        } catch (e : Exception) {
-            Log.getStackTraceString(e)
-            Toast.makeText(context, "Ocorreu um erro interno.", Toast.LENGTH_LONG).show()
-        }
+            }
+        }.start()
     }
 
 }

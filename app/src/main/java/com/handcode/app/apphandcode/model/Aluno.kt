@@ -1,16 +1,7 @@
 package com.handcode.app.apphandcode.model
 
-import java.io.Serializable
+class Aluno : Usuario {
 
-class Aluno : Serializable {
-
-    var nome = ""
-    var usuario = ""
-    var senha = ""
-
-    constructor(nome: String, usuario: String, senha: String) {
-        this.nome = nome
-        this.usuario = usuario
-        this.senha = senha
-    }
+    constructor(email: String, senha: String) : super(email, senha)
+    constructor(nome: String, email: String, senha: String) : super(nome, email, senha)
 }
