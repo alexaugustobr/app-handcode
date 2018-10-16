@@ -86,4 +86,10 @@ class MainActivity : DebugActivity() {
         }.start()
     }
 
+    Thread {
+        runOnUiThread {
+
+        }
+    }.start()
+
 }
