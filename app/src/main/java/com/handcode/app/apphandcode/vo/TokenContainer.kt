@@ -1,6 +1,8 @@
 package com.handcode.app.apphandcode.vo
 
-class TokenContainer(val token: String ) {
+import java.io.Serializable
+
+class TokenContainer(val token: String ) : Serializable {
 
     fun getTokenPrefix() : String {
         return "Bearer"

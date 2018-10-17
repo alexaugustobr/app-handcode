@@ -9,7 +9,7 @@ abstract class AbstractModel : Serializable {
     var id: UUID? = null
 
     fun toJson(): String {
-        return GsonBuilder().create().toJson(this)
+        return GsonBuilder().setPrettyPrinting().create().toJson(this)
     }
 
 

@@ -13,6 +13,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import com.handcode.app.apphandcode.R
+import com.handcode.app.apphandcode.service.EntregaService
 import kotlinx.android.synthetic.main.activity_cadastro_grupo.*
 import kotlinx.android.synthetic.main.toolbar.*
 
@@ -30,6 +31,16 @@ class EntregasActivity : DebugActivity(), NavigationView.OnNavigationItemSelecte
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         configuraMenuLateral()
+
+        this.configurarEntregas();
+    }
+
+    private fun configurarEntregas() {
+        Thread {
+
+            val entregaLista = EntregaService.listarEntregas()
+
+        }.start()
     }
 
     private fun configuraMenuLateral(){

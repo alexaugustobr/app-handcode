@@ -9,7 +9,7 @@ import com.handcode.app.apphandcode.vo.TokenContainer
 
 object EntregasPendentesService : BaseService(){
 
-    fun getEntregas (context: Context): List<Entrega> {
+   /* fun getEntregas (context: Context): List<Entrega> {
         if (AndroidUtils.isInternetDisponivel(context)){
             val url = host()+apiPrefix()+"/me/entregas/pendentes"
             val json = HttpHelper.get(url)
@@ -20,6 +20,6 @@ object EntregasPendentesService : BaseService(){
         //Toast.makeText(context, "Sem internet", Toast.LENGTH_SHORT).show()
         return ArrayList<Disciplina>()
     }
-
+*/
 
 }
