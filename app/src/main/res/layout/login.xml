@@ -78,6 +78,13 @@
             android:padding="10dp"
             android:text="Entrar" />
 
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"/>
+
         <TextView
             android:id="@+id/actionEsqueceuSenha"
             android:layout_width="match_parent"
