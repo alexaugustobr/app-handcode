@@ -11,6 +11,7 @@ import com.handcode.app.apphandcode.model.AlunoNaoEncontradoException
 import com.handcode.app.apphandcode.model.AlunoService
 import com.handcode.app.apphandcode.model.LoginService
 import com.handcode.app.apphandcode.model.SenhaIncorretaException
+import com.handcode.app.apphandcode.service.EntregaService
 import kotlinx.android.synthetic.main.login.*
 import kotlinx.android.synthetic.main.toolbar.*
 
@@ -44,32 +45,49 @@ class MainActivity : DebugActivity() {
     }
 
     private fun login(usuario : String, senha : String) {
-        try {
+        Thread {
+            try {
 
-            val alunoLogado = LoginService.logar(usuario, senha)
+                val tokenContainer = LoginService.logar(usuario, senha)
 
-            val params = Bundle()
-            params.putString("usuario", usuario)
+                val alunoAutenticado = LoginService.informacoesUsuarioAutenticado(tokenContainer)
 
-            val intent = Intent(context, PainelAlunoActivity::class.java)
-            intent.putExtras(params)
+                val params = Bundle()
+                params.putString("usuario", usuario)
+                params.putSerializable("token", tokenContainer)
+                params.putSerializable("alunoAutenticado",alunoAutenticado)
 
-            startActivity(intent)
 
-            val nome = alunoLogado.nome
+                val intent = Intent(context, PainelAlunoActivity::class.java)
+                intent.putExtras(params)
 
-            Toast.makeText(context, "Bem vindo $nome.", Toast.LENGTH_LONG).show()
+                startActivity(intent)
 
-        } catch (e : AlunoNaoEncontradoException) {
-            Log.getStackTraceString(e)
-            Toast.makeText(context, "Usuário ou senha incorretos" , Toast.LENGTH_LONG).show()
-        } catch (e : SenhaIncorretaException) {
-            Log.getStackTraceString(e)
-            Toast.makeText(context, "Usuário ou senha incorretos" , Toast.LENGTH_LONG).show()
-        } catch (e : Exception) {
-            Log.getStackTraceString(e)
-            Toast.makeText(context, "Ocorreu um erro interno.", Toast.LENGTH_LONG).show()
-        }
+                val nome = alunoAutenticado.nome
+                runOnUiThread {
+                    Toast.makeText(context, "Bem vindo $nome.", Toast.LENGTH_LONG).show()
+                }
+            } catch (e : AlunoNaoEncontradoException) {
+                Log.getStackTraceString(e)
+                e.printStackTrace()
+                runOnUiThread {
+                    Toast.makeText(context, "Usuário ou senha incorretos", Toast.LENGTH_LONG).show()
+                }
+            } catch (e : SenhaIncorretaException) {
+                Log.getStackTraceString(e)
+                e.printStackTrace()
+                runOnUiThread {
+                    Toast.makeText(context, "Usuário ou senha incorretos", Toast.LENGTH_LONG).show()
+                }
+            } catch (e : Exception) {
+                Log.getStackTraceString(e)
+                e.printStackTrace()
+                runOnUiThread {
+                    Toast.makeText(context, "Ocorreu um erro interno.", Toast.LENGTH_LONG).show()
+                }
+
+            }
+        }.start()
     }
 
 }
