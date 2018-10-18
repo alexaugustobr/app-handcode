@@ -15,10 +15,13 @@ import android.support.v7.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.LinearLayout
+import android.widget.TextView
 import android.widget.Toast
 import com.handcode.app.apphandcode.R
 import com.handcode.app.apphandcode.model.Entrega
+import com.handcode.app.apphandcode.model.Usuario
 import com.handcode.app.apphandcode.service.EntregaService
+import com.handcode.app.apphandcode.service.LocalStore
 import kotlinx.android.synthetic.main.activity_cadastro_grupo.*
 import kotlinx.android.synthetic.main.entregas.*
 import kotlinx.android.synthetic.main.toolbar.*
@@ -59,15 +62,16 @@ class EntregasActivity : DebugActivity(), NavigationView.OnNavigationItemSelecte
         Thread {
 
             val entregaLista = EntregaService.listarEntregas()
+            val listaFiltrada = arrayListOf<Entrega>()
             for (item in entregaLista) {
                 if (item.situacaoEntega.nome == "Entregue") {
-                    runOnUiThread {
-                        recyclerEntregas?.adapter = EntregasAdapter(entregaLista) { onClickEntrega(it)}
-                    }
+                    listaFiltrada.add(item)
                 }
 
             }
-
+            runOnUiThread {
+                recyclerEntregas?.adapter = EntregasAdapter(listaFiltrada) { onClickEntrega(it)}
+            }
         }.start()
     }
 
@@ -94,6 +98,12 @@ class EntregasActivity : DebugActivity(), NavigationView.OnNavigationItemSelecte
 
         val navigationView = findViewById<NavigationView>(R.id.menu_lateral)
         navigationView.setNavigationItemSelectedListener(this)
+
+        val n = navigationView.getHeaderView(0).findViewById<TextView>(R.id.nomeUsuario)
+
+        val u = LocalStore.data.get("usuario") as Usuario
+
+        n.text = u.nome
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {

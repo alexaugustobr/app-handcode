@@ -12,6 +12,7 @@ import com.handcode.app.apphandcode.model.AlunoService
 import com.handcode.app.apphandcode.model.LoginService
 import com.handcode.app.apphandcode.model.SenhaIncorretaException
 import com.handcode.app.apphandcode.service.EntregaService
+import com.handcode.app.apphandcode.service.LocalStore
 import kotlinx.android.synthetic.main.login.*
 import kotlinx.android.synthetic.main.toolbar.*
 
@@ -54,10 +55,11 @@ class MainActivity : DebugActivity() {
 
                 val params = Bundle()
                 params.putString("usuario", usuario)
-                params.putSerializable("token", tokenContainer)
-                params.putSerializable("alunoAutenticado",alunoAutenticado)
 
+                LocalStore.data.put("token", tokenContainer)
+                LocalStore.data.put("usuario", alunoAutenticado)
 
+                LocalStore.data.get("token")
                 val intent = Intent(context, PainelAlunoActivity::class.java)
                 intent.putExtras(params)
 

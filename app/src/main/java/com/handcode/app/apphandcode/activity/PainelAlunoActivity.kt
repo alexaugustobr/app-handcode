@@ -11,10 +11,17 @@ import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.TextView
 import android.widget.Toast
 import com.handcode.app.apphandcode.R
+import com.handcode.app.apphandcode.model.Usuario
+import com.handcode.app.apphandcode.service.LocalStore
 import kotlinx.android.synthetic.main.activity_cadastro_grupo.*
+import kotlinx.android.synthetic.main.menu_lateral_cabecalho.*
+import kotlinx.android.synthetic.main.menu_lateral_cabecalho.view.*
 import kotlinx.android.synthetic.main.toolbar.*
+import java.text.SimpleDateFormat
+import java.util.*
 
 class PainelAlunoActivity : DebugActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -28,13 +35,18 @@ class PainelAlunoActivity : DebugActivity(), NavigationView.OnNavigationItemSele
         setSupportActionBar(toolbar)
         supportActionBar?.title = "Painel do Aluno"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
         configuraMenuLateral()
+
+
+
     }
 
     private fun configuraMenuLateral(){
         var toolbar = findViewById<Toolbar>(R.id.toolbar)
         var menuLateral = findViewById<DrawerLayout>(R.id.layoutMenuLateral)
+
+
+
 
         var toogle = ActionBarDrawerToggle (
                 this,
@@ -48,6 +60,12 @@ class PainelAlunoActivity : DebugActivity(), NavigationView.OnNavigationItemSele
 
         val navigationView = findViewById<NavigationView>(R.id.menu_lateral)
         navigationView.setNavigationItemSelectedListener(this)
+
+        val n = navigationView.getHeaderView(0).findViewById<TextView>(R.id.nomeUsuario)
+
+        val u = LocalStore.data.get("usuario") as Usuario
+
+        n.text = u.nome
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {

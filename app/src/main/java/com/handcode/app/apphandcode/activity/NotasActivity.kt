@@ -11,8 +11,11 @@ import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.TextView
 import android.widget.Toast
 import com.handcode.app.apphandcode.R
+import com.handcode.app.apphandcode.model.Usuario
+import com.handcode.app.apphandcode.service.LocalStore
 import kotlinx.android.synthetic.main.activity_cadastro_grupo.*
 import kotlinx.android.synthetic.main.toolbar.*
 
@@ -48,6 +51,12 @@ class NotasActivity : DebugActivity(), NavigationView.OnNavigationItemSelectedLi
 
         val navigationView = findViewById<NavigationView>(R.id.menu_lateral)
         navigationView.setNavigationItemSelectedListener(this)
+
+        val n = navigationView.getHeaderView(0).findViewById<TextView>(R.id.nomeUsuario)
+
+        val u = LocalStore.data.get("usuario") as Usuario
+
+        n.text = u.nome
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {

@@ -11,6 +11,7 @@ import android.widget.TextView
 import com.handcode.app.apphandcode.R
 import com.handcode.app.apphandcode.model.Entrega
 import com.squareup.picasso.Picasso
+import java.text.SimpleDateFormat
 
 class EntregasAdapter (
         val entregas: List<Entrega>,
@@ -50,7 +51,12 @@ class EntregasAdapter (
         val entrega = entregas[position]
 
         holder.cardTitulo.text = entrega.titulo
-        holder.cardDataEntrega.text = entrega.dataEntrega.toString()
+
+        if (entrega.dataEntrega != null) {
+            holder.cardDataEntrega.text = SimpleDateFormat("dd/MM/YYYY - hh:mm").format( entrega.dataEntrega)
+        }
+
+
         holder.cardDescricao.text = entrega.descricao
         holder.cardSituacaoEntega.text = entrega.situacaoEntega.toString()
         //holder.cardProgress.visibility = View.VISIBLE
