@@ -5,11 +5,10 @@ import java.util.*
 class Entrega : AbstractModel {
 
     var data: Date? = null
-    var descricao: String = ""
-    var titulo: String = ""
     var dataEntrega: Date? = null
     var dataLiberacao: Date? = null
-    var situacaoEntega: Status = Status.PENDENTE
+    var status: Status = Status.PENDENTE
+    var tarefa: Tarefa = Tarefa()
 
     constructor() : super()
 
@@ -19,10 +18,6 @@ class Entrega : AbstractModel {
         PENDENTE("Pendente"),
         ENTREGUE("Entregue")
 
-    }
-
-    override fun toString(): String {
-        return "Entrega(data=$data, descricao='$descricao', titulo='$titulo', dataEntrega=$dataEntrega, dataLiberacao=$dataLiberacao, situacaoEntega=$situacaoEntega)"
     }
 
 

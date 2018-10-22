@@ -5,12 +5,9 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.ProgressBar
 import android.widget.TextView
 import com.handcode.app.apphandcode.R
 import com.handcode.app.apphandcode.model.Entrega
-import com.squareup.picasso.Picasso
 import java.text.SimpleDateFormat
 
 class EntregasAdapter (
@@ -50,15 +47,15 @@ class EntregasAdapter (
 
         val entrega = entregas[position]
 
-        holder.cardTitulo.text = entrega.titulo
+        holder.cardTitulo.text = entrega.tarefa.titulo
 
         if (entrega.dataEntrega != null) {
             holder.cardDataEntrega.text = SimpleDateFormat("dd/MM/YYYY - hh:mm").format( entrega.dataEntrega)
         }
 
 
-        holder.cardDescricao.text = entrega.descricao
-        holder.cardSituacaoEntega.text = entrega.situacaoEntega.toString()
+        holder.cardDescricao.text = entrega.tarefa.descricao
+        holder.cardSituacaoEntega.text = entrega.status.toString()
         //holder.cardProgress.visibility = View.VISIBLE
 
 

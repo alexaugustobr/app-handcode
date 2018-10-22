@@ -2,7 +2,6 @@ package com.handcode.app.apphandcode.activity
 
 import android.content.Context
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
@@ -21,8 +20,6 @@ import com.handcode.app.apphandcode.model.Entrega
 import com.handcode.app.apphandcode.model.Usuario
 import com.handcode.app.apphandcode.service.EntregaService
 import com.handcode.app.apphandcode.service.LocalStore
-import kotlinx.android.synthetic.main.activity_cadastro_grupo.*
-import kotlinx.android.synthetic.main.toolbar.*
 
 class EntregasPendentesActivity : DebugActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -59,22 +56,16 @@ class EntregasPendentesActivity : DebugActivity(), NavigationView.OnNavigationIt
     private fun configurarEntregas() {
         Thread {
 
-            val entregaLista = EntregaService.listarEntregas()
-            val listaFiltrada = arrayListOf<Entrega>()
-            for (item in entregaLista) {
-                if (item.situacaoEntega.nome == "Pendente") {
-                    listaFiltrada.add(item)
-                }
+            val entregaLista = EntregaService.listarEntregas(Entrega.Status.PENDENTE)
 
-            }
             runOnUiThread {
-                recyclerEntregas?.adapter = EntregasAdapter(listaFiltrada) { onClickEntrega(it)}
+                recyclerEntregas?.adapter = EntregasAdapter(entregaLista) { onClickEntrega(it)}
             }
         }.start()
     }
 
     fun onClickEntrega (entrega: Entrega) {
-        Toast.makeText(context, "Selecionou Entrega ${entrega.titulo}", Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, "Selecionou Entrega ${entrega.tarefa.titulo}", Toast.LENGTH_SHORT).show()
         val intent = Intent(context, EntregasPendentesActivity::class.java)
         intent.putExtra("entrega", entrega)
         startActivity(intent)
