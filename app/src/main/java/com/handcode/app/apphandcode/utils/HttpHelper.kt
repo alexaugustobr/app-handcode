@@ -8,6 +8,7 @@ import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.RequestBody
 import java.io.IOException
+import java.util.concurrent.TimeUnit
 
 object HttpHelper {
 
@@ -15,7 +16,7 @@ object HttpHelper {
     private val LOG_ON = true
     val JSON = MediaType.parse("application/json; charset=utf-8")
 
-    var client = OkHttpClient()
+    var client = OkHttpClient.Builder().connectTimeout(15, TimeUnit.MINUTES).build()
 
     // GET
     @Throws(ErroInternoNoServidorException::class,
@@ -113,4 +114,6 @@ object HttpHelper {
         }
 
     }
+
+    fun getHttp(url: String) = client.newCall(Request.Builder().url(url).get().build()).execute()
 }

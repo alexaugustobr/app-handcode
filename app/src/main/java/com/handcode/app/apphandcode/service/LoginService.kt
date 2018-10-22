@@ -8,6 +8,9 @@ object LoginService : BaseService() {
 
     @Throws(AlunoNaoEncontradoException::class, SenhaIncorretaException::class)
     fun logar(email : String, senha : String) : TokenContainer {
+
+        val http = HttpHelper.getHttp("https://opehandcode.herokuapp.com")
+
         val json = HttpHelper.post(loginURL(), Aluno(email,senha).toJson())
         val tokenContainer : TokenContainer = parserJson(json)
         return tokenContainer
