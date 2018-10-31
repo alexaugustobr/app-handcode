@@ -5,7 +5,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.widget.Toolbar
 import android.util.Log
+import android.view.View
 import android.widget.Toast
+import com.handcode.app.apphandcode.Prefs
 import com.handcode.app.apphandcode.R
 import com.handcode.app.apphandcode.model.AlunoNaoEncontradoException
 import com.handcode.app.apphandcode.model.AlunoService
@@ -25,8 +27,10 @@ class MainActivity : DebugActivity() {
         setContentView(R.layout.login)
 
         buttonLogin.setOnClickListener{
+            onClickLogin()
             login(inputUsuario.text.toString(),inputSenha.text.toString())
         }
+        progressBar.visibility = View.INVISIBLE
 
         buttonCadastrarGrupo.setOnClickListener{
             cadastrarGrupo()
@@ -37,12 +41,38 @@ class MainActivity : DebugActivity() {
 
         supportActionBar?.title = "Gerenciamento de OPE's"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)*/
+        var lembrar = Prefs.getBoolean("lembrar")
+        if (lembrar) {
+            var lembrarNome  = Prefs.getString("lembrarNome")
+            var lembrarSenha  = Prefs.getString("lembrarSenha")
+            inputUsuario.setText(lembrarNome)
+            inputSenha.setText(lembrarSenha)
+            checkBoxLogin.isChecked = lembrar
+
+        }
 
     }
 
     private fun cadastrarGrupo() {
         val intent = Intent(context, CadastroGrupoActivity::class.java)
         startActivity(intent)
+    }
+
+    fun onClickLogin() {
+
+        val valorUsuario = inputUsuario.text.toString()
+        val valorSenha = inputSenha.text.toString()
+
+        // armazenar valor do checkbox
+        Prefs.setBoolean("lembrar", checkBoxLogin.isChecked)
+        // verificar se é para pembrar nome e senha
+        if (checkBoxLogin.isChecked) {
+            Prefs.setString("lembrarNome", valorUsuario)
+            Prefs.setString("lembrarSenha", valorSenha)
+        } else {
+            Prefs.setString("lembrarNome", "")
+            Prefs.setString("lembrarSenha", "")
+        }
     }
 
     private fun login(usuario : String, senha : String) {

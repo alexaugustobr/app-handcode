@@ -67,23 +67,36 @@
             android:inputType="textPassword"
             android:padding="10dp" />
 
-        <Button
-            android:id="@+id/buttonLogin"
+        <CheckBox
+            android:id="@+id/checkBoxLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="80dp"
-            android:layout_marginRight="80dp"
-            android:layout_marginTop="10dp"
-            android:fontFamily="@font/raleway_extrabold"
-            android:padding="10dp"
-            android:text="Entrar" />
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:fontFamily="@font/raleway_medium"
+            android:text="Lembrar login" />
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <Button
+                android:id="@+id/buttonLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="80dp"
+                android:layout_marginRight="80dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/raleway_extrabold"
+                android:padding="10dp"
+                android:text="Entrar" />
 
-        <ProgressBar
-            android:id="@+id/progressBar"
-            style="?android:attr/progressBarStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"/>
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"/>
+        </FrameLayout>
 
         <TextView
             android:id="@+id/actionEsqueceuSenha"
