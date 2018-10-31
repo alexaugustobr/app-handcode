@@ -1,4 +1,4 @@
-package fernandosousa.com.br.lmsapp
+package com.handcode.app.apphandcode.utils
 
 import android.content.Context
 import android.net.ConnectivityManager

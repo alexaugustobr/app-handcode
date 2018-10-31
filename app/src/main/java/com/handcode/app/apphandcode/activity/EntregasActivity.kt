@@ -1,5 +1,6 @@
 package com.handcode.app.apphandcode.activity
 
+
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -20,6 +21,7 @@ import com.handcode.app.apphandcode.model.Entrega
 import com.handcode.app.apphandcode.model.Usuario
 import com.handcode.app.apphandcode.service.EntregaService
 import com.handcode.app.apphandcode.service.LocalStore
+
 
 class EntregasActivity : DebugActivity(), NavigationView.OnNavigationItemSelectedListener {
 
