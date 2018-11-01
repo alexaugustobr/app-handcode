@@ -1,8 +1,8 @@
 package com.handcode.app.apphandcode.model
 
 import com.handcode.app.apphandcode.service.BaseService
+import com.handcode.app.apphandcode.utils.HttpHelper
 import com.handcode.app.apphandcode.vo.TokenContainer
-import fernandosousa.com.br.lmsapp.HttpHelper
 
 object LoginService : BaseService() {
 

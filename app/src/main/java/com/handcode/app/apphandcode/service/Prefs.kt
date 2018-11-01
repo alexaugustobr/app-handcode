@@ -1,6 +1,5 @@
 package com.handcode.app.apphandcode
 
-import android.content.Context
 import android.content.SharedPreferences
 
 object Prefs {

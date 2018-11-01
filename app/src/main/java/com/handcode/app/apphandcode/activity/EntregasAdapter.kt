@@ -47,14 +47,13 @@ class EntregasAdapter (
 
         val entrega = entregas[position]
 
-        holder.cardTitulo.text = entrega.tarefa.titulo
+        holder.cardTitulo.text = entrega.titulo
 
         if (entrega.dataEntrega != null) {
-            holder.cardDataEntrega.text = SimpleDateFormat("dd/MM/YYYY - hh:mm").format( entrega.dataEntrega)
+            holder.cardDataEntrega.text = entrega.dataEntrega
         }
 
-
-        holder.cardDescricao.text = entrega.tarefa.descricao
+        holder.cardDescricao.text = entrega.descricao
         holder.cardSituacaoEntega.text = entrega.status.toString()
         //holder.cardProgress.visibility = View.VISIBLE
 

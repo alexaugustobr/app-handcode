@@ -3,20 +3,16 @@ package com.handcode.app.apphandcode.activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.widget.Toolbar
 import android.util.Log
 import android.view.View
 import android.widget.Toast
 import com.handcode.app.apphandcode.Prefs
 import com.handcode.app.apphandcode.R
 import com.handcode.app.apphandcode.model.AlunoNaoEncontradoException
-import com.handcode.app.apphandcode.model.AlunoService
 import com.handcode.app.apphandcode.model.LoginService
 import com.handcode.app.apphandcode.model.SenhaIncorretaException
-import com.handcode.app.apphandcode.service.EntregaService
 import com.handcode.app.apphandcode.service.LocalStore
 import kotlinx.android.synthetic.main.login.*
-import kotlinx.android.synthetic.main.toolbar.*
 
 class MainActivity : DebugActivity() {
 

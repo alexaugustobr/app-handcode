@@ -8,7 +8,7 @@ import android.arch.persistence.room.Query
 @Dao
 interface EntregaDAO {
     @Query ("SELECT * FROM entrega where id= :id")
-    fun getById(id: Long): Entrega?
+    fun getById(id: String): Entrega?
 
     @Query ("SELECT * FROM entrega")
     fun findAll():List<Entrega>
@@ -18,4 +18,7 @@ interface EntregaDAO {
 
     @Delete
     fun delete(entrega: Entrega)
+
+    @Query ("SELECT * FROM entrega where status= :status")
+    fun findAllByStatus(status: String ): List<Entrega>
 }

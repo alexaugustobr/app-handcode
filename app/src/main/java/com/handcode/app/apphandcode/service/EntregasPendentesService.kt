@@ -1,10 +1,7 @@
 package com.handcode.app.apphandcode.model
 
 
-import android.content.Context
-import android.util.Log
 import com.handcode.app.apphandcode.service.BaseService
-import com.handcode.app.apphandcode.vo.TokenContainer
 
 
 object EntregasPendentesService : BaseService(){

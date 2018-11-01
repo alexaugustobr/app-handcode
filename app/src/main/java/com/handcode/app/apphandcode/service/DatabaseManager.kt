@@ -13,7 +13,7 @@ object DatabaseManager {
                 appContext,
                 LMSDatabase::class.java,
                 "ope.sqlite"
-        ).build()
+        ).fallbackToDestructiveMigration().build()
     }
 
     fun getEntregaDAO(): EntregaDAO {

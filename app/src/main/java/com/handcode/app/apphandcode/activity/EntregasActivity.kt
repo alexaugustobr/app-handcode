@@ -58,7 +58,7 @@ class EntregasActivity : DebugActivity(), NavigationView.OnNavigationItemSelecte
     private fun configurarEntregas() {
         Thread {
 
-            val entregaLista = EntregaService.listarEntregas(Entrega.Status.ENTREGUE)
+            val entregaLista = EntregaService.listarEntregas(context, Entrega.Status.REALIZADA)
             runOnUiThread {
                 recyclerEntregas?.adapter = EntregasAdapter(entregaLista) { onClickEntrega(it)}
             }
@@ -66,7 +66,7 @@ class EntregasActivity : DebugActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     fun onClickEntrega (entrega: Entrega) {
-        Toast.makeText(context, "Selecionou Entrega ${entrega.tarefa.titulo}", Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, "Selecionou Entrega ${entrega.titulo}", Toast.LENGTH_SHORT).show()
         val intent = Intent(context, EntregasActivity::class.java)
         intent.putExtra("entrega", entrega)
         startActivity(intent)

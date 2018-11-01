@@ -1,4 +1,4 @@
-package fernandosousa.com.br.lmsapp
+package com.handcode.app.apphandcode.utils
 
 import android.util.Log
 import com.handcode.app.apphandcode.exception.*
@@ -7,7 +7,6 @@ import okhttp3.MediaType
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.RequestBody
-import java.io.IOException
 import java.util.concurrent.TimeUnit
 
 object HttpHelper {
@@ -82,6 +81,8 @@ object HttpHelper {
             RequisicaoNaoEncontradaException::class,
             FalhaNaAutenticacaoDaRequisicaoException::class)
     private fun executeAndParseJson(request: Request?): String {
+
+
         val response = client.newCall(request).execute()
 
         if (response.code() == 500) {

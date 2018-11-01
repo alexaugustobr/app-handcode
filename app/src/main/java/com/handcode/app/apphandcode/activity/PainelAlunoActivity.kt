@@ -2,7 +2,6 @@ package com.handcode.app.apphandcode.activity
 
 import android.content.Context
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
@@ -16,12 +15,6 @@ import android.widget.Toast
 import com.handcode.app.apphandcode.R
 import com.handcode.app.apphandcode.model.Usuario
 import com.handcode.app.apphandcode.service.LocalStore
-import kotlinx.android.synthetic.main.activity_cadastro_grupo.*
-import kotlinx.android.synthetic.main.menu_lateral_cabecalho.*
-import kotlinx.android.synthetic.main.menu_lateral_cabecalho.view.*
-import kotlinx.android.synthetic.main.toolbar.*
-import java.text.SimpleDateFormat
-import java.util.*
 
 class PainelAlunoActivity : DebugActivity(), NavigationView.OnNavigationItemSelectedListener {
 

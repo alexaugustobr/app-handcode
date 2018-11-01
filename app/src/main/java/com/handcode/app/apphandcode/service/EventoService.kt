@@ -1,8 +1,7 @@
 package com.handcode.app.apphandcode.service
 
 import com.handcode.app.apphandcode.model.Evento
-import com.handcode.app.apphandcode.model.LoginService
-import fernandosousa.com.br.lmsapp.HttpHelper
+import com.handcode.app.apphandcode.utils.HttpHelper
 
 object EventoService:BaseService() {
     fun listarEventos ():List<Evento>{
