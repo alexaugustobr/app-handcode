@@ -36,6 +36,11 @@
         <activity android:name=".activity.CadastroGrupoActivity"/>
         <activity android:name=".activity.CadastroIntegranteActivity"/>
         <activity android:name=".activity.ConfiguracoesActivity"></activity>
+        <service android:name=".service.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>
