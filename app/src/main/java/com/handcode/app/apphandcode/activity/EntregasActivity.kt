@@ -21,6 +21,7 @@ import com.handcode.app.apphandcode.model.Entrega
 import com.handcode.app.apphandcode.model.Usuario
 import com.handcode.app.apphandcode.service.EntregaService
 import com.handcode.app.apphandcode.service.LocalStore
+import com.handcode.app.apphandcode.utils.NotificationUtil
 
 
 class EntregasActivity : DebugActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -57,7 +58,6 @@ class EntregasActivity : DebugActivity(), NavigationView.OnNavigationItemSelecte
 
     private fun configurarEntregas() {
         Thread {
-
             val entregaLista = EntregaService.listarEntregas(context, Entrega.Status.REALIZADA)
             runOnUiThread {
                 recyclerEntregas?.adapter = EntregasAdapter(entregaLista) { onClickEntrega(it)}

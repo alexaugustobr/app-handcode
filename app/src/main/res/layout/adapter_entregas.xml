@@ -28,7 +28,7 @@
             android:layout_marginTop="16dp"
             android:fontFamily="@font/raleway_extrabold"
             android:textColor="@color/colorPrimaryDarkHandcode"
-            android:textSize="25sp" />
+            android:textSize="17sp" />
 
         <TextView
             android:id="@+id/cardDataEntrega"
@@ -38,7 +38,7 @@
             android:layout_marginTop="16dp"
             android:fontFamily="@font/raleway_medium"
             android:textColor="@color/colorPrimaryHandcode"
-            android:textSize="20dp" />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/cardDescricao"
@@ -58,7 +58,7 @@
             android:layout_marginBottom="16dp"
             android:fontFamily="@font/raleway_extrabold"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="20sp" />
+            android:textSize="17sp" />
         <!--<FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">

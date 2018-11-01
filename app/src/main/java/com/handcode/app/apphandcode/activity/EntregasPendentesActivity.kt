@@ -20,6 +20,7 @@ import com.handcode.app.apphandcode.model.Entrega
 import com.handcode.app.apphandcode.model.Usuario
 import com.handcode.app.apphandcode.service.EntregaService
 import com.handcode.app.apphandcode.service.LocalStore
+import com.handcode.app.apphandcode.utils.NotificationUtil
 
 class EntregasPendentesActivity : DebugActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -60,8 +61,15 @@ class EntregasPendentesActivity : DebugActivity(), NavigationView.OnNavigationIt
 
             runOnUiThread {
                 recyclerEntregas?.adapter = EntregasAdapter(entregaLista) { onClickEntrega(it)}
+                enviaNotificacao(entregaLista[0])
             }
         }.start()
+    }
+
+    fun enviaNotificacao(entrega: Entrega) {
+        val intent = Intent(this, EntregasPendentesActivity::class.java)
+        intent.putExtra("entrega", entrega)
+        NotificationUtil.create(this, 1, intent,"OPE - Impacta", "Você tem uma nova atividade: ${entrega.titulo}")
     }
 
     fun onClickEntrega (entrega: Entrega) {
