@@ -69,7 +69,6 @@ object EntregaService: BaseService() {
             return entregaSalva
         } else {
             entrega.status = Entrega.Status.REALIZADA.toString()
-            entrega.dataEntrega =  SimpleDateFormat("dd/MM/yyyy").format(Date().toString())
             this.atualizarOffline(entrega)
             return entrega
         }
