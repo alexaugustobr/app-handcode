@@ -50,7 +50,7 @@ class EntregasAdapter (
         holder.cardTitulo.text = entrega.titulo
 
         if (entrega.dataEntrega != null) {
-            holder.cardDataEntrega.text = entrega.dataEntrega
+            holder.cardDataEntrega.text = "Prazo: " + entrega.dataEntrega
         }
 
         holder.cardDescricao.text = entrega.descricao

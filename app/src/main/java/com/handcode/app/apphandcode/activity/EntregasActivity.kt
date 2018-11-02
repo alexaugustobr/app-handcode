@@ -35,6 +35,19 @@ class EntregasActivity : DebugActivity(), NavigationView.OnNavigationItemSelecte
         super.onCreate(savedInstanceState)
         setContentView(R.layout.entregas)
 
+        // acessar parametros da intnet
+        // intent é um atributo herdado de Activity
+        val args:Bundle? = intent.extras
+        // recuperar o parâmetro do tipo String
+
+        val nome = args?.getString("nome")
+
+        // recuperar parâmetro simplificado
+        val numero = intent.getIntExtra("nome",0)
+
+        Toast.makeText(context, "Parâmetro: $nome", Toast.LENGTH_LONG).show()
+        Toast.makeText(context, "Numero: $numero", Toast.LENGTH_LONG).show()
+
         var toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
         supportActionBar?.title = "Entregas"
@@ -67,7 +80,7 @@ class EntregasActivity : DebugActivity(), NavigationView.OnNavigationItemSelecte
 
     fun onClickEntrega (entrega: Entrega) {
         Toast.makeText(context, "Selecionou Entrega ${entrega.titulo}", Toast.LENGTH_SHORT).show()
-        val intent = Intent(context, EntregasActivity::class.java)
+        val intent = Intent(context, DetalhesEntrega::class.java)
         intent.putExtra("entrega", entrega)
         startActivity(intent)
     }

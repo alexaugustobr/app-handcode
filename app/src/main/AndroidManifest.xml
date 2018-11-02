@@ -35,6 +35,8 @@
         <activity android:name=".activity.NotasActivity"/>
         <activity android:name=".activity.CadastroGrupoActivity"/>
         <activity android:name=".activity.CadastroIntegranteActivity"/>
+        <activity android:name=".activity.DetalhesEntrega"/>
+        <activity android:name=".activity.DetalheEntregaPendente"/>
         <activity android:name=".activity.ConfiguracoesActivity"></activity>
         <service android:name=".service.MyFirebaseMessagingService">
             <intent-filter>

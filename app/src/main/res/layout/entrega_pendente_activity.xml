@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.MainActivity">
+    <include layout="@layout/toolbar"/>
+    <ScrollView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".activity.DetalheEntregaPendente"
+            android:orientation="vertical"
+            android:fontFamily="@font/raleway_medium"
+            android:padding="40dp">
+            <TextView
+                android:id="@+id/cardTitulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/raleway_extrabold"
+                android:textColor="@color/colorPrimaryDarkHandcode"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/cardDataEntrega"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/raleway_medium"
+                android:textColor="@color/colorPrimaryHandcode"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/cardDescricao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/raleway"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/cardSituacaoEntega"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="@font/raleway_extrabold"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="17sp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btEntregar"
+                android:text="Marcar Entregue" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

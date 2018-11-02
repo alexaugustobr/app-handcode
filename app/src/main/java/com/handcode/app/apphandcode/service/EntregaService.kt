@@ -5,6 +5,8 @@ import com.handcode.app.apphandcode.model.Entrega
 import com.handcode.app.apphandcode.utils.AndroidUtils
 import com.handcode.app.apphandcode.utils.HttpHelper
 import com.handcode.app.apphandcode.utils.Response
+import java.text.SimpleDateFormat
+import java.util.*
 
 
 object EntregaService: BaseService() {
@@ -35,6 +37,17 @@ object EntregaService: BaseService() {
         return true
     }
 
+    fun atualizarOffline(entrega: Entrega) : Entrega {
+        if (existeEntrega(entrega.id)) {
+            try {
+                dao.update(entrega)
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
+        return entrega
+    }
+
     fun savaOffline (entregas: List<Entrega>):Boolean{
         for (entrega in entregas) {
             this.savaOffline(entrega)
@@ -47,11 +60,19 @@ object EntregaService: BaseService() {
         return entrega != null
     }
 
-    fun delete (entrega: Entrega):Response {
-        val url = host()+"/entregas/${entrega.id}"
-        val json = HttpHelper.delete(url)
-        return parserJson<Response>(json)
+    fun entregar(entrega: Entrega, context: Context) : Entrega {
+        if (AndroidUtils.isInternetDisponivel(context)) {
+            val url = host()+"/rest/entregas/${entrega.id}/entregar"
+            val json = HttpHelper.get(url)
+            var entregaSalva : Entrega =  parserJson(json)
+            this.atualizarOffline(entregaSalva)
+            return entregaSalva
+        } else {
+            entrega.status = Entrega.Status.REALIZADA.toString()
+            entrega.dataEntrega =  SimpleDateFormat("dd/MM/yyy").format(Date().toString())
+            this.atualizarOffline(entrega)
+            return entrega
+        }
+
     }
-
-
 }

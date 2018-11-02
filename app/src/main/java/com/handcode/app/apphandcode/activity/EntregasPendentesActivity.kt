@@ -61,7 +61,7 @@ class EntregasPendentesActivity : DebugActivity(), NavigationView.OnNavigationIt
 
             runOnUiThread {
                 recyclerEntregas?.adapter = EntregasAdapter(entregaLista) { onClickEntrega(it)}
-                enviaNotificacao(entregaLista[0])
+                if (!entregaLista.isEmpty())  enviaNotificacao(entregaLista[0])
             }
         }.start()
     }
@@ -74,7 +74,7 @@ class EntregasPendentesActivity : DebugActivity(), NavigationView.OnNavigationIt
 
     fun onClickEntrega (entrega: Entrega) {
         Toast.makeText(context, "Selecionou Entrega ${entrega.titulo}", Toast.LENGTH_SHORT).show()
-        val intent = Intent(context, EntregasPendentesActivity::class.java)
+        val intent = Intent(context, DetalheEntregaPendente::class.java)
         intent.putExtra("entrega", entrega)
         startActivity(intent)
     }
